@@ -5,7 +5,31 @@ import time
 import random
 
 # Dados com array bidimensional: [Livro, Capítulo, Versículo, Texto]
-BIBLIA_DATA =[]
+BIBLIA_DATA =[[
+    "GN",
+    1,
+    1,
+    "No princípio criou Deus os céus e a terra."
+  ],
+  [
+    "JO",
+    3,
+    16,
+    "Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito, para que todo aquele que nele crê não pereça, mas tenha a vida eterna."
+  ],
+   [
+    "AP",
+    22,
+    20,
+    "Aquele que testifica estas coisas diz: Certamente cedo venho. Amém; vem, Senhor Jesus."
+  ],
+  [
+    "AP",
+    22,
+    21,
+    "A graça do Senhor Jesus seja com todos."
+  ]
+  ]
 
 
 menu_items = ["Pesquisar", "Palavra do dia"]
