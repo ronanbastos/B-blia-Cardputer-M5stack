@@ -14,7 +14,7 @@
 - Interface com botões e teclado
 - Coloque no seu cardputer seu livros favoritos com arquivo create_personalidado.py
 - Coloque os arquivos na memoria flash para otimizar o tempo de recarga use biblia_card-flash.py
-- Pasta livros com todos as estruturar pronta para uso no flash 
+- Pasta livros com todos as estruturar pronta para uso no flash: Até versão flash so suporte txt format
  
 Todo o Novo Testamento
 
