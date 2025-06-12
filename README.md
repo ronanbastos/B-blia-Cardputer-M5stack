@@ -3,6 +3,8 @@
 <b>
 🕊️ Um projeto que une fé e tecnologia.  
 📖 A Bíblia, sempre acessível no seu dispositivo M5Stack.
+Tradução: João Ferreira de Almeida
+Edição Revista e Corrigida
 
 ## 🇵🇹 Recursos
 - Pesquisar versículos (ex: `GN 1:1`, `JO 3`)
@@ -11,6 +13,7 @@
 - Interface com botões e teclado
 - Coloque no seu cardputer seu livros favoritos com arquivo create_personalidado.py
 - Coloque os arquivos na memoria flash para otimizar o tempo de recarga use biblia_card-flash.py
+- Pasta livros com todos as estruturar pronta para uso no flash 
  
 Todo o Novo Testamento
 
