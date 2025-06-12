@@ -8,6 +8,16 @@
 - Palavra do Dia (aleatória)
 - Paginação do texto
 - Interface com botões e teclado
+ 
+Todo o Novo Testamento
+
+arquivo newtestamento_pv_sl_data.txt
+
+Mais Provérbios (sabedoria para o cotidiano)
+
+E Salmos (oração, louvor, emoção)
+
+💬 Ideal para leitura diária com equilíbrio entre doutrina, história, oração e vida prática.
 
 ## 🇺🇸 Features
 - Search Bible verses (e.g., `GN 1:1`, `JO 3`)
@@ -16,6 +26,8 @@
 - Interface with keys and buttons
 
 ---
+
+
 
 > “Lâmpada para os meus pés é tua palavra...” – Salmos 119:105
 
