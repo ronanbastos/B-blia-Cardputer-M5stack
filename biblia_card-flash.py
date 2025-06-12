@@ -4,7 +4,6 @@ from hardware import MatrixKeyboard
 import time
 import random
 
-# Dados com array bidimensional: [Livro, Capítulo, Versículo, Texto]
 BIBLIA_DATA = []
 
 def carregar_biblia_do_arquivo(nome_arquivo):
@@ -18,25 +17,20 @@ def carregar_biblia_do_arquivo(nome_arquivo):
                     continue
                 partes = linha.split(',', 3)
                 if len(partes) != 4:
-                    print("Linha ignorada (formato incorreto):", linha)
                     continue
                 livro, cap_str, vers_str, texto = partes
                 try:
                     cap = int(cap_str)
                     vers = int(vers_str)
                 except:
-                    print("Capítulo ou versículo inválido:", linha)
                     continue
                 BIBLIA_DATA.append([livro, cap, vers, texto])
-        print(f"{len(BIBLIA_DATA)} versículos carregados de {nome_arquivo}")
     except Exception as e:
         print("Erro ao carregar arquivo:", e)
 
-# Exemplo de uso:
-carregar_biblia_do_arquivo('pv.txt')
+carregar_biblia_do_arquivo('PV.txt')
 
-
-menu_items = ["Pesquisar", "Palavra do dia"]
+menu_items = ["Palavra do dia"]
 selected_index = 0
 precisa_atualizar = True
 
@@ -44,9 +38,6 @@ label2 = None
 label3 = None
 kb = None
 versiculo_labels = []
-
-modo_pesquisa = False
-texto_digitado = ""
 
 pagina_versiculo = 0
 linhas_por_pagina = 4
@@ -81,15 +72,6 @@ def draw_menu():
         M5.Lcd.setCursor(5, y)
         M5.Lcd.print(prefix + item)
         y += 20
-
-def draw_input():
-    M5.Lcd.fillScreen(0x000000)
-    M5.Lcd.setTextSize(2)
-    M5.Lcd.setTextColor(0xFFFFFF, 0x000000)
-    M5.Lcd.setCursor(10, 30)
-    M5.Lcd.print("Digite o versiculo:")
-    M5.Lcd.setCursor(10, 70)
-    M5.Lcd.print(texto_digitado + "_")
 
 def montar_linhas(texto):
     max_chars = 15
@@ -139,51 +121,6 @@ def mostrar_versiculo(texto):
     pagina_versiculo = 0
     mostrar_versiculo_pagina(pagina_versiculo)
 
-def buscar_versiculo(ref):
-    ref = ref.strip().upper()
-    if not ref:
-        return ["Nenhum versículo digitado."]
-    
-    partes = ref.split()
-    if len(partes) == 1:
-        livro = partes[0]
-        encontrados = []
-        for item in BIBLIA_DATA:
-            if item[0] == livro:
-                encontrados.append(f"{livro} {item[1]}:{item[2]} - {item[3]}")
-        if not encontrados:
-            return ["Livro não encontrado."]
-        return encontrados
-
-    elif len(partes) == 2:
-        livro, resto = partes
-        if ":" in resto:
-            cap_str, vers_str = resto.split(":")
-            try:
-                cap = int(cap_str)
-                vers = int(vers_str)
-            except:
-                return ["Formato inválido no capítulo ou versículo."]
-            for item in BIBLIA_DATA:
-                if item[0] == livro and item[1] == cap and item[2] == vers:
-                    return [f"{livro} {cap}:{vers} - {item[3]}"]
-            return ["Versículo não encontrado."]
-        else:
-            try:
-                cap = int(resto)
-            except:
-                return ["Formato inválido no capítulo."]
-            encontrados = []
-            for item in BIBLIA_DATA:
-                if item[0] == livro and item[1] == cap:
-                    encontrados.append(f"{livro} {item[1]}:{item[2]} - {item[3]}")
-            if not encontrados:
-                return ["Capítulo não encontrado."]
-            return encontrados
-
-    else:
-        return ["Formato inválido. Use: GN, GN 1 ou GN 1:1"]
-
 def palavra_do_dia():
     item = random.choice(BIBLIA_DATA)
     texto = item[3]
@@ -191,57 +128,25 @@ def palavra_do_dia():
     return f"{ref} - {texto}"
 
 def selecionar_opcao():
-    global modo_pesquisa, texto_digitado
-    opcao = menu_items[selected_index]
     label2.setVisible(False)
     label3.setVisible(False)
-    if opcao == "Pesquisar":
-        modo_pesquisa = True
-        texto_digitado = ""
-        draw_input()
-    elif opcao == "Palavra do dia":
-        texto = palavra_do_dia()
-        mostrar_versiculo(texto)
+    texto = palavra_do_dia()
+    mostrar_versiculo(texto)
 
 def voltar_ao_menu():
-    global modo_pesquisa, texto_digitado, pagina_versiculo, linhas_versiculo
-    modo_pesquisa = False
-    texto_digitado = ""
+    global pagina_versiculo, linhas_versiculo
     pagina_versiculo = 0
     linhas_versiculo.clear()
     draw_menu()
 
 def kb_pressed_event(kb_0):
-    global selected_index, precisa_atualizar, modo_pesquisa, texto_digitado
-    global pagina_versiculo, linhas_versiculo, linhas_por_pagina
+    global selected_index, precisa_atualizar, pagina_versiculo, linhas_versiculo
     KeyCode = kb.get_key()
     if KeyCode is None:
         return
 
     if KeyCode == 27:  # ESC
         voltar_ao_menu()
-        return
-
-    if modo_pesquisa:
-        if KeyCode == 13:  # Enter
-            modo_pesquisa = False
-            resultados = buscar_versiculo(texto_digitado)
-            mostrar_versiculo(texto_digitado.upper() + " >>")
-            linhas_versiculo.clear()
-            for r in resultados:
-                linhas_versiculo += montar_linhas(r)
-            mostrar_versiculo_pagina(0)
-        elif KeyCode == 8:  # Backspace
-            if len(texto_digitado) > 0:
-                texto_digitado = texto_digitado[:-1]
-            draw_input()
-        else:
-            try:
-                if 32 <= KeyCode <= 126:
-                    texto_digitado += chr(KeyCode)
-                    draw_input()
-            except:
-                pass
         return
 
     if linhas_versiculo:
