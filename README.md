@@ -10,7 +10,7 @@
 - Paginação do texto
 - Interface com botões e teclado
 - Coloque no seu cardputer seu livros favoritos com arquivo create_personalidado.py
-- Coloque os arquivo na memoria flash para otimizar o tempo de recarga use biblia_card-flash.py
+- Coloque os arquivos na memoria flash para otimizar o tempo de recarga use biblia_card-flash.py
  
 Todo o Novo Testamento
 
