@@ -3,8 +3,9 @@
 <b>
 🕊️ Um projeto que une fé e tecnologia.  
 📖 A Bíblia, sempre acessível no seu dispositivo M5Stack.
-Tradução: João Ferreira de Almeida
-Edição Revista e Corrigida
+
+<p>Tradução: João Ferreira de Almeida
+<p>Edição Revista e Corrigida
 
 ## 🇵🇹 Recursos
 - Pesquisar versículos (ex: `GN 1:1`, `JO 3`)
