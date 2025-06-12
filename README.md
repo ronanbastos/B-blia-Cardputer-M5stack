@@ -1,5 +1,5 @@
 # BurnM5 - Bíblia para M5Stack
-
+![Tela do app Bíblia Card]([images/screenshot.png](https://github.com/ronanbastos/Biblia-Cardputer-M5stack/blob/main/test%20no%20cardpute.jpeg))
 🕊️ Um projeto que une fé e tecnologia.  
 📖 A Bíblia, sempre acessível no seu dispositivo M5Stack.
 
