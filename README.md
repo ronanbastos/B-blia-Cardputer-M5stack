@@ -8,6 +8,7 @@
 - Palavra do Dia (aleatória)
 - Paginação do texto
 - Interface com botões e teclado
+- coloque no seu cardputer seu livros favoritos com arquivo create_personalidado.py
  
 Todo o Novo Testamento
 
@@ -18,6 +19,8 @@ Mais Provérbios (sabedoria para o cotidiano)
 E Salmos (oração, louvor, emoção)
 
 💬 Ideal para leitura diária com equilíbrio entre doutrina, história, oração e vida prática.
+
+
 
 ## 🇺🇸 Features
 - Search Bible verses (e.g., `GN 1:1`, `JO 3`)
