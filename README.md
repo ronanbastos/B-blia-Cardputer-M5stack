@@ -24,14 +24,5 @@ E Salmos (oração, louvor, emoção)
 
 
 
-## 🇺🇸 Features
-- Search Bible verses (e.g., `GN 1:1`, `JO 3`)
-- Word of the Day (random)
-- Paginated reading
-- Interface with keys and buttons
-- biblia card h e cpp 
-
-
-
 > “Lâmpada para os meus pés é tua palavra...” – Salmos 119:105
 
