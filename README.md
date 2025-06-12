@@ -9,7 +9,8 @@
 - Palavra do Dia (aleatória)
 - Paginação do texto
 - Interface com botões e teclado
-- coloque no seu cardputer seu livros favoritos com arquivo create_personalidado.py
+- Coloque no seu cardputer seu livros favoritos com arquivo create_personalidado.py
+- Coloque os arquivo na memoria flash para otimizar o tempo de recarga use biblia_card-flash.py
  
 Todo o Novo Testamento
 
@@ -28,8 +29,7 @@ E Salmos (oração, louvor, emoção)
 - Word of the Day (random)
 - Paginated reading
 - Interface with keys and buttons
-
----
+- biblia card h e cpp 
 
 
 
