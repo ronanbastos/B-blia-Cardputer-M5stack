@@ -11,7 +11,7 @@ def carregar_biblia_do_arquivo(nome_arquivo):
     global BIBLIA_DATA
     BIBLIA_DATA.clear()
     try:
-        with open('/flash/' + nome_arquivo, 'r', encoding='utf-8') as f:
+        with open('/flash/' + nome_arquivo, 'r') as f:
             for linha in f:
                 linha = linha.strip()
                 if not linha:
