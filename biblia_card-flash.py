@@ -127,18 +127,18 @@ def mostrar_versiculo_pagina(pagina):
     global linhas_versiculo, linhas_por_pagina
 
     M5.Lcd.fillScreen(0x000000)
-    M5.Lcd.setTextSize(1)  # fonte menor
+    M5.Lcd.setTextSize(1.5)  # fonte menor
     M5.Lcd.setTextColor(0xFFFFFF, 0x000000)
 
     inicio = pagina * linhas_por_pagina
     fim = inicio + linhas_por_pagina
     linhas_para_mostrar = linhas_versiculo[inicio:fim]
 
-    y = 10
+    y = 20
     for linha in linhas_para_mostrar:
         M5.Lcd.setCursor(10, y)
         M5.Lcd.print(linha)
-        y += 15  # reduzir espaçamento vertical para caber mais linhas
+        y += 20  # reduzir espaçamento vertical para caber mais linhas
 
     # Mostrar referência do versículo
     if BIBLIA_DATA and 0 <= indice_versiculo < len(BIBLIA_DATA):
@@ -230,3 +230,4 @@ if __name__ == "__main__":
     while True:
         loop()
         time.sleep(0.1)
+
