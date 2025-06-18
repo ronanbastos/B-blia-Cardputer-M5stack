@@ -16,7 +16,7 @@
 280 versículos do livro EDR salvos em 'EDR.txt'
 405 versículos do livro NEE salvos em 'NEE.txt'
 166 versículos do livro EST salvos em 'EST.txt'
-1949 versículos do livro JO salvos em 'JO.txt'
+1949 versículos do livro JO E JÓ salvos em 'JO.txt E JÓ.txt'
 2460 versículos do livro SL salvos em 'SL.txt'
 915 versículos do livro PV salvos em 'PV.txt'
 222 versículos do livro EC salvos em 'EC.txt'
