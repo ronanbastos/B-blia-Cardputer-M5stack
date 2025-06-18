@@ -16,6 +16,7 @@
 - Coloque os arquivos na memoria flash para otimizar o tempo de recarga use biblia_card-flash.py
 - Jeito mais rapido de usar é criar um uiflow o codigo biblia_card.py,coloca os partida da biblia que você gosta,burn tem limite de 300 linhas
 - Pasta livros com todos as estruturar pronta para uso no flash: Até versão flash so suporte txt format
+- Atualizei os arquivos para ler no Bruce file,só extrair o biblia-bruce-file.rar no sd depois abrir no Bruce file
  
 Todo o Novo Testamento
 
